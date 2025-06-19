@@ -18,10 +18,6 @@ function onScanSuccess(decodedText, decodedResult) {
   };
 }
 
-function onScanFailure(error) {
-  // Optionally show error or log
-}
-
 async function startCamera() {
   if (isScanning) return;
   html5QrCode = new Html5Qrcode("reader");
@@ -74,5 +70,48 @@ async function stopCamera() {
 document.getElementById('start-btn').onclick = startCamera;
 document.getElementById('stop-btn').onclick = stopCamera;
 
-// Optionally, auto-start camera on page load:
-// window.onload = startCamera;
+// QR Code Generator using qrcodejs
+const qrForm = document.getElementById('qr-form');
+const qrUrlInput = document.getElementById('qr-url');
+const qrOutput = document.getElementById('qr-output');
+
+qrForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const url = qrUrlInput.value.trim();
+  if (!url) return;
+  qrOutput.innerHTML = '';
+  const qrDiv = document.createElement('div');
+  qrDiv.id = 'qr-canvas';
+  qrOutput.appendChild(qrDiv);
+  const qr = new QRCode(qrDiv, {
+    text: url,
+    width: 220,
+    height: 220,
+    colorDark: "#2563eb",
+    colorLight: "#ffffff",
+    correctLevel: QRCode.CorrectLevel.H
+  });
+  setTimeout(() => {
+    const img = qrDiv.querySelector('img');
+    if (img) {
+      const canvas = qrDiv.querySelector('canvas');
+      if (canvas) canvas.remove();
+      img.style.display = 'block';
+      img.style.maxWidth = '220px';
+      img.style.margin = '0 auto 10px auto';
+      img.alt = 'Generated QR Code';
+      qrOutput.innerHTML = '';
+      const displayDiv = document.createElement('div');
+      displayDiv.style.display = 'flex';
+      displayDiv.style.flexDirection = 'column';
+      displayDiv.style.alignItems = 'center';
+      displayDiv.innerHTML = `<h3 style='margin-bottom:8px;color:#2563eb;'>Your QR Code:</h3>`;
+      displayDiv.appendChild(img);
+      displayDiv.innerHTML += `<div style='margin-top:10px;word-break:break-all;font-size:0.95rem;'>${url}</div>`;
+      displayDiv.innerHTML += `<a href="${img.src}" download="qr-code.png" class="open-link" style="display:block;margin-top:8px;">Download QR Code</a>`;
+      qrOutput.appendChild(displayDiv);
+    } else {
+      qrOutput.innerHTML = '<span style="color:red">Error generating QR code.</span>';
+    }
+  }, 300);
+});

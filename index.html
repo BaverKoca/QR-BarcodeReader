@@ -6,8 +6,8 @@
   <title>QR & Barcode Scanner</title>
   <link rel="stylesheet" href="css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <!-- Use minified CDN for html5-qrcode for best compatibility -->
-  <script src="https://unpkg.com/html5-qrcode@2.3.10/minified/html5-qrcode.min.js"></script>
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
   <div class="container">
@@ -17,8 +17,16 @@
     <div id="result">Waiting for scan...</div>
     <button id="start-btn">Start Camera</button>
     <button id="stop-btn" style="display:none;">Stop Camera</button>
+    <hr style="margin:32px 0;">
+    <div class="qr-section">
+      <h2>Generate QR Code</h2>
+      <form id="qr-form">
+        <input type="url" id="qr-url" placeholder="Enter URL to encode" required>
+        <button type="submit" id="generate-btn">Generate</button>
+      </form>
+      <div id="qr-output"></div>
+    </div>
   </div>
-  <!-- Place app.js after html5-qrcode script -->
   <script src="js/app.js"></script>
 </body>
 </html>
