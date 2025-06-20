@@ -1,12 +1,13 @@
 # QR & Barcode Scanner
 
-A professional, modern web app to scan and generate QR codes and barcodes using your device camera.
+A modern, professional web app to scan and generate QR codes and barcodes using your device camera. Fast, mobile-friendly, and easy to use.
 
 ---
 
-## 🚀 Features
-- **Scan QR codes & barcodes** in real time using your phone or computer camera
+## ✨ Features
+- **Real-time QR & barcode scanning** with your phone or computer camera
 - **Generate static QR codes** for any URL, with instant preview and download
+- **Edit generated QR codes** before downloading
 - **Works on all modern browsers** (desktop & mobile)
 - **No installation required** – just open in your browser
 - **Beautiful, responsive UI**
@@ -14,21 +15,23 @@ A professional, modern web app to scan and generate QR codes and barcodes using 
 
 ---
 
-## 📸 How to Use
-### Scan QR/Barcodes
-1. Open `index.html` in your browser (or use a local server for camera access)
-2. Click **Start Camera** and allow camera access
-3. Point your camera at a QR code or barcode
-4. The result will appear instantly, with options to copy or open links
+## 🚀 Getting Started
 
-### Generate QR Codes
-1. Enter a URL in the **Generate QR Code** section
-2. Click **Generate**
-3. Your QR code will appear with a download link and preview
+### 1. Scan QR Codes & Barcodes
+- Open `index.html` in your browser *(or use a local server for camera access)*
+- Click **Start Camera** and allow camera access
+- Point your camera at a QR code or barcode
+- The result will appear instantly, with options to copy or open links
+
+### 2. Generate QR Codes
+- Enter a URL in the **Generate QR Code** section
+- Click **Generate**
+- Your QR code will appear with a download link and preview
+- You can edit the URL and instantly update the QR code
 
 ---
 
-## 🛠️ Project Structure
+## 🗂️ Project Structure
 ```
 qr-barcode-scanner/
 ├── index.html
@@ -43,7 +46,7 @@ qr-barcode-scanner/
 
 ---
 
-## 📦 Libraries Used
+## 🛠️ Libraries Used
 - [html5-qrcode](https://github.com/mebjas/html5-qrcode) – Camera scanning (QR & barcodes)
 - [qrcodejs](https://github.com/davidshimjs/qrcodejs) – QR code generation
 
@@ -58,9 +61,14 @@ Then open [http://localhost:5500](http://localhost:5500) in your browser.
 
 ---
 
-## 📲 Mobile Friendly
+## 📱 Mobile Friendly
 - Fully responsive and touch-optimized
 - Works on iOS and Android browsers
+
+---
+
+## 📸 Screenshots
+<!-- Optionally add screenshots here -->
 
 ---
 
