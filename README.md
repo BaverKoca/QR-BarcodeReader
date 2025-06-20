@@ -4,6 +4,13 @@ A modern, professional web app to scan and generate QR codes and barcodes using 
 
 ---
 
+## 📸 Screenshots
+![Image](https://github.com/user-attachments/assets/d2d72510-89dd-4cb4-9e74-1ddd88353ae3)
+![Image](https://github.com/user-attachments/assets/6e958ed5-61b1-445d-98fe-8bbe541fefe4)
+<!-- Optionally add screenshots here -->
+
+---
+
 ## ✨ Features
 - **Real-time QR & barcode scanning** with your phone or computer camera
 - **Generate static QR codes** for any URL, with instant preview and download
@@ -64,11 +71,6 @@ Then open [http://localhost:5500](http://localhost:5500) in your browser.
 ## 📱 Mobile Friendly
 - Fully responsive and touch-optimized
 - Works on iOS and Android browsers
-
----
-
-## 📸 Screenshots
-<!-- Optionally add screenshots here -->
 
 ---
 
